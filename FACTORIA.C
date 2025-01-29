@@ -1,17 +1,22 @@
-/*To Calculate Factorial of a given Number using for Loop*/
+/*To Calculate Factorial of a given Number using Function*/
 #include<stdio.h>
-#include<conio.h>
 void main()
 {
-	int a,f=1,n;
+	int n,f;
+	int factorial(int x);
 	clrscr();
 	printf("Enter any Number\n");
 	scanf("%d",&n);
-	for(a=1;a<=n;a++)
+	f=factorial(n);
+	printf("factorial of %d=%d\n",n,f);
+	getch();
+}
+int factorial(int x)
+{
+	int a,f=1;
+	for(a=1;a<=x;a++)
 	{
 		f=f*a;
 	}
-	printf("Factorial=%d\n",f);
-	getch();
+	return f;
 }
-
