@@ -1,16 +1,22 @@
-/*To Swapping of Two Numbers using Third Variable*/
+/*To Interchange(Swapping) of Two Numbers using Function(without Return Type)*/
 #include<stdio.h>
 #include<conio.h>
 void main()
 {
-	int a,b,t;
+	int a,b;
+	void swap(int x,int y);
 	clrscr();
-	printf("Enter Any Two Numbers\n");
+	printf("enter any no\n");
 	scanf("%d%d",&a,&b);
-	t=a;
-	a=b;
-	b=t;
-	printf("Value of a=%d\n",a);
-	printf("Value of a=%d\n",b);
+	swap(a,b);		//Function Calling
 	getch();
+}
+void swap(int x,int y) //x received value of a,y received value of b
+{
+	int t;
+	t=x;
+	x=y;
+	y=t;
+	printf("value of a=%d\n",x);
+	printf("value of b=%d\n",y);
 }
