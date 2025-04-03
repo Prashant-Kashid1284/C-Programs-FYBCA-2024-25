@@ -1,26 +1,25 @@
-/*Example of Pointer Variable(&,*)using Function(Call By Reference)*/
+/*To Calculate Factorial of a given Number Using Pointer Function*/
 #include<stdio.h>
 #include<conio.h>
 void main()
 {
-	int a;
-	void function1(int *a);
+	int f,n;
+	int factorial(int *p);
+	int (*ptr)(int *p);
 	clrscr();
+	ptr=factorial;
 	printf("Enter any Number\n");
-	scanf("%d",&a);       //a=80
-	function1(&a);         //Call by Reference
-	printf("Value of a in main()=%d\n",a);      //Value of a=80
+	scanf("%d",&n);
+	f=ptr(&n);
+	printf("Factorial=%d\n",f);
 	getch();
 }
-void function1(int *a) //a received value of a in main()
-{                //*a=*65524=50
-	void function2(int **a);
-	*a=*a+10;      //*65524(50)+10=60
-	function2(&a);         //Call by Value
-	printf("Value of a in function1()=%d\n",*a);       //Value of a=80
-}
-void function2(int **a)
-{                //a=60+20=80
-	**a=**a+20;        //**65522=*65524=60+20=80
-	printf("Value of a in function2()=%d\n",**a);       //Value of a=80
+int factorial(int *p)
+{
+	int f=1,a;
+	for(a=1;a<=*p;a++)
+	{
+		f=f*a;
+	}
+	return f;
 }
