@@ -1,33 +1,36 @@
-/*To Check Whether given Number is Armstrong or Not*/
+/* To check whether given number is armstrong or not(Using Pointer Function)*/
 #include<stdio.h>
-#include<conio.h>
 void main()
-{
-	int r,sum=0,n,m;
+{	int sum,n;
+	int armstrong(int x);
+	int (*ptrarm)(int x);
 	clrscr();
-	printf("Enter Any Number\n");
-	scanf("%d",&n);
-	m=n;
-	while(n>0)
+	printf("enter any number\n");
+	scanf("%d",&n);     //n=153
+	ptrarm=armstrong; //ptrarm points to the address of armstrong function
+	sum=(*ptrarm)(n);   //Call By Value
+	if(sum==n)
 	{
-		r=n%10;
-		sum=sum+r*r*r;
-		n=n/10;
-	}
-	printf("Sum of Cube=%d\n",sum);
-	if(sum==m)
-	{
-		printf("%d Number is Armstrong\n",m);
+		printf("%d number is armstrong\n",n);
 	}
 	else
 	{
-		printf("%d Number is Not Armstrong\n",m);
+		printf("%d number is not armstrong\n",n);
 	}
 	getch();
 }
-
-
-
+int armstrong(int x)
+{
+	int r,sum=0;
+	while(x>0)
+	{
+		r=x%10;
+		sum=sum+r*r*r;
+		x=x/10;
+	 }
+	 printf("sum of cube=%d\n",sum);
+	 return sum;
+}
 
 
 
