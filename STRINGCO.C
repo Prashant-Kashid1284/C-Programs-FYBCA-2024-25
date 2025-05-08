@@ -1,16 +1,18 @@
-/*To Copy one String into another string using SLF*/
-#include<stdio.h>                             //Standard Library Functions
+/*To Copy Number of Characters from one String to Another String Using SLF*/
+#include<stdio.h>
 #include<conio.h>
 #include<string.h>
-void main()          //String is a Collection of Characters
-{                    //String is a Sequence of Characters(Array of Characters)
-	char s1[20],s2[20];
+void main()
+{
+	char src[20],dest[20];
+	int n;
 	clrscr();
-	printf("Enter a String Value\n");
-	gets(s1);	      //Welcome BCA
-	strcpy(s2,s1);  //Can not copy using '=' operator(s2=s1)//Source(s1)
-	printf("Original String Value=");
-	puts(s1);          //printf("String Value of s=%s\n",s);    //Welcome
-	printf("Copied String=%s\n",s2);
+	printf("Enter a String\n");
+	gets(src);                 //Welcome
+	printf("Enter How Many Characters to be Copied\n");
+	scanf("%d",&n);     //n=3
+	strncpy(dest,src,n);      //copy src(Welcome) into  dest(Wel)
+	printf("Original String=%s\n",src);  //Welcome
+	printf("Copied String=%s\n",dest);    //Wel
 	getch();
 }

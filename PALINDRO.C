@@ -1,27 +1,31 @@
-/*To Check Whether given Number is Palindrome or Not*/
-#include<stdio.h>
-#include<conio.h>
+/*To Check Whether given String is Palindrome or not[using pointer]*/
 void main()
 {
-	int r,rev=0,n,p;
+	char s[20],t,*p;                     //flag=1-->Palindrome
+	int st=0,i=0,e,flag=1;               //flag=0-->Not Palindrome
 	clrscr();
-	printf("Enter Any Number\n");
-	scanf("%d",&n);
-	p=n;
-	while(n>0)
+	printf("Enter any String\n");
+	gets(s);     //madam  madam
+	p=&s[0];     //p=1001
+	while(*(p+i)!='\0'){	i++;	}
+	e=i-1;
+	while(st<e)
 	{
-		r=n%10;
-		rev=rev*10+r;
-		n=n/10;
+		if(*(p+st)!=*(p+e))
+		{
+			flag=0;
+			break;
+		}
+		st++;
+		e--;
 	}
-	printf("Reverse=%d\n",rev);
-	if(rev==p)
+	if(flag==1)
 	{
-		printf("%d Number is Palindrome\n",p);
+		printf("%s String is Palindrome\n",s);
 	}
 	else
 	{
-		printf("%d Number is Not Palindrome\n",p);
+		printf("%s String is Not Palindrome\n",s);
 	}
 	getch();
 }
