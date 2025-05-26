@@ -1,26 +1,36 @@
-/*To Find Maximum of 2 Numbers using Function(Using Return Type)*/
+/*To Find Maximum of 3 Numbers usingCommand Line Arguments*/
 #include<stdio.h>
-#include<conio.h>
-void main()
+void main(int argc,char *argv[])
 {
-	int x,y,max;
-	int maximum(int a,int b);
-	clrscr();
-	printf("enter any two numbers\n");
-	scanf("%d%d",&x,&y);     //x=156,y=78                    //p=pow(x,y);
-	max=maximum(x,y);        //Function Calling
-	printf("Maximum=%d\n",max);
-	getch();
-}
-int maximum(int a,int b)
-{
-	if(a>b)
+     int x,y,z;
+     clrscr();
+     if(argc!=4)
+     {
+	printf("Wrong Arguments\n");
+	exit(0);
+     }
+     x=atoi(argv[1]);
+     y=atoi(argv[2]);
+     z=atoi(argv[3]);
+     if(x>y && x>z)
+     {
+	printf("Maximum=%d\n",x);
+     }
+     else
+     {
+	if(y>x && y>z)
 	{
-		return a;
+		printf("Maximum=%d\n",y);
 	}
 	else
 	{
-		return b;
+		printf("Maximum=%d\n",z);
 	}
+     }
+     getch();
 }
+
+
+
+
 
