@@ -1,12 +1,15 @@
-/*To Check whether given number is Prime or Not*/
+/*To Check Whether given Number is Prime or Not,using Command Line Argument*/
 #include<stdio.h>
-#include<conio.h>
-void main()
+void main(int argc,char *argv[])
 {
-	int a,n,flag=1;
+	int n,a,flag=1;
 	clrscr();
-	printf("Enter Any Number\n");
-	scanf("%d",&n);
+	if(argc!=2)
+	{
+		printf("Wrong argument\n");
+		exit(0);
+	}
+	n=atoi(argv[1]);
 	a=2;
 	while(a<n)
 	{
@@ -24,14 +27,5 @@ void main()
 	else
 	{
 		printf("%d Number is Not Prime\n",n);
-
 	}
-	getch();
 }
-
-
-
-
-
-
-
